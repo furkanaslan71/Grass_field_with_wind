@@ -1,5 +1,5 @@
 # Computer Graphics II - Homework III
-<img src="final_output_1.png" alt="final_output_1" width="250"/> <img src="final_output_2.png" alt="final_output_2" width="250"/> 
+<img src="grass1.png" alt="grass1" width="250"/> <img src="grass4.png" alt="grass4" width="250"/> 
 ## Grass Blade Generation
 Generating grass blades from vertices is straightforward with the geometry shader stage. We can just render a simple triangle from the input vertex, a little offset vertex, and a vertex that is at the top of the input vertex with a height of grass blade height we choose. For example, we can do something like this in geometry shader (simplified):
 
@@ -206,13 +206,10 @@ void main()
 ```
 ## Results
 
-<img src="grass_no_wind.png" alt="grass_no_wind.png" width="700"/> 
+<img src="grass2.png" alt="grass2" width="700"/> 
 
-<img src="grass_no_wind.png" alt="grass_no_wind.png" width="700"/> 
+<img src="grass3.png" alt="grass3" width="700"/> 
 
-<img src="grass_no_wind.png" alt="grass_no_wind.png" width="700"/> 
+<img src="grass5.png" alt="grass5" width="700"/> 
 
-<img src="grass_no_wind.png" alt="grass_no_wind.png" width="700"/> 
-
-<img src="grass_no_wind.png" alt="grass_no_wind.png" width="700"/> 
 
