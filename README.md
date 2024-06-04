@@ -1,7 +1,7 @@
 # Computer Graphics II - Homework III
 <!-- insert final images -->
 ## Grass Blade Generation
-Generating grass blades from vertices is straightforward with the geometry shader stage. We can just render a simple triangle from the input vertex, a little offset vertex, and a vertex that is at the top of the input vertex with a height of grass blade height we choose. For example, we can do something likes this in geometry shader (simplified):
+Generating grass blades from vertices is straightforward with the geometry shader stage. We can just render a simple triangle from the input vertex, a little offset vertex, and a vertex that is at the top of the input vertex with a height of grass blade height we choose. For example, we can do something like this in geometry shader (simplified):
 
 ```glsl
 
@@ -17,9 +17,12 @@ for(int i = 0; i < 3; i++)
   vec4 point2 = vec4(position + bezierOffset, 1.0);
   gl_Position = projection * view * point2;
   EmitVertex();
-  vec4 point3 = vec4(position + bezierOffset * normal * bladeHeight, 1.0);
-  gl_Position = projection * view * point2;
+  vec4 point3 = vec4(position + normal * bladeHeight, 1.0);
+  gl_Position = projection * view * point3;
   EmitVertex();
   EndPrimitive();
 }
+```
+<img src="straigth_grass" alt="Straigth Grass blades" width="700"/> 
+However, as you can see, this would generate very sharp, knife-like grass blades. As we know, grass blades in real life have a curve-like structure. So, we will use bezier-curves to generate grass blades to achieve that. 
 
